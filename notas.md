@@ -24,3 +24,17 @@ with open('/Users/hectorfigueredo/Desktop/Curso-Machine Learning/repos/ml-portaf
 
 Los datos yo diria que los guardare en listas o en variables
 
+4. Para la creacion del programa estoy viendo como hacer lo de los diccionarios si los equiops no estan. Ahorita no tengo mucha idea de como hacerlo
+
+    for row in reader:
+        Equipos=[]
+        Equipos.append(row['HomeTeam'])
+        Equipos.append(row['AwayTeam'])
+        for x in Equipos:
+            if x in Teams:
+                continue
+            else:
+                Teams[x] = {'PJ':0, 'G':0, 'E':0, 'P':0, 'GF':0, 'GC':0, 'puntos':0,'DG':0}
+
+    Esa fue mi solucion y me di cuenta depsues que puedo hacer con dict.setdefault
+
