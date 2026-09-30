@@ -38,3 +38,4 @@ Los datos yo diria que los guardare en listas o en variables
 
     Esa fue mi solucion y me di cuenta depsues que puedo hacer con dict.setdefault
 
+5. Criterio de desempate puntos, diferencia de goles, goles a favor

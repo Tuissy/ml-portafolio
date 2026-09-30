@@ -36,6 +36,18 @@ with open('data/E0.csv', newline='') as csvfile:
             home['P'] += 1
             away['G'] += 1  
 
+        home['DG'] = home['GF'] - home['GC']
+        away['DG'] = away['GF'] - away['GC']
+
+
 print(sum(e['PJ'] for e in Teams.values()))                                    # 100
 print(sum(e['GF'] for e in Teams.values()), sum(e['GC'] for e in Teams.values()))  # iguales
 print(all(e['G'] + e['E'] + e['P'] == e['PJ'] for e in Teams.values()))   # debe dar True
+
+orden = sorted(Teams.items(), key=lambda x: (x[1]['puntos'],x[1]['DG'],x[1]['GF']), reverse=True)
+posicion = enumerate(orden, start=1)
+
+print(f'{"Pos":<10} {"Equipo":<23} {"PJ":>10} {"G":>10} {"E":>10} {"P":>10} {"GF":>10} {"GC":>10} {"DG":>10} {"Pts":>10}')
+
+for pos, (nombre, datos) in posicion:
+    print(f"{pos:<10} {nombre:<23} {datos['PJ']:>10} {datos['G']:>10} {datos['E']:>10} {datos['P']:>10} {datos['GF']:>10} {datos['GC']:>10} {datos['DG']:>+10} {datos['puntos']:>10}")
