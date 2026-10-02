@@ -39,3 +39,20 @@ Los datos yo diria que los guardare en listas o en variables
     Esa fue mi solucion y me di cuenta depsues que puedo hacer con dict.setdefault
 
 5. Criterio de desempate puntos, diferencia de goles, goles a favor
+
+
+Explicacion de Feynam:
+
+¿Por qué un diccionario de diccionarios y no una lista?
+
+Usamos un diccionario de diccionarios porque si usaramos listas tendrias que recorrerla completa para acceder a un dato, esto con una gran cantidad de datos haria mucho mas lento el programa. Por lo que con los diccionarios tenemos una velocidad de O(1) y no de O(n), gracias a que podemos ir directo al dato deseado con el uso de las keys.
+
+¿Qué hace setdefault y qué problema te evita?
+
+El setdefault nos ayuda a crear los valores por defecto del diccionario, de esta forma crea solo si no existe; si ya hay valores, no los toca, y evitar que haya problemas a la hora de insertar datos.
+
+
+¿Por qué la clave de ordenación devuelve una tupla de tres valores?
+
+Esto lo hace porque fue lo que pedimos, ya que no estamos ordenando la tabla por un solo criterio, sino que hay un desempate de 3 condiciones. Por lo que es necesario para nostros que se nos retorne la tupla de 3 valores.
+

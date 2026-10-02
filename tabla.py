@@ -51,3 +51,5 @@ print(f'{"Pos":<10} {"Equipo":<23} {"PJ":>10} {"G":>10} {"E":>10} {"P":>10} {"GF
 
 for pos, (nombre, datos) in posicion:
     print(f"{pos:<10} {nombre:<23} {datos['PJ']:>10} {datos['G']:>10} {datos['E']:>10} {datos['P']:>10} {datos['GF']:>10} {datos['GC']:>10} {datos['DG']:>+10} {datos['puntos']:>10}")
+
+assert sum(e['PJ'] for e in Teams.values()) == 100, "Faltan partidos por contar"
