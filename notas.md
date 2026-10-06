@@ -56,3 +56,30 @@ El setdefault nos ayuda a crear los valores por defecto del diccionario, de esta
 
 Esto lo hace porque fue lo que pedimos, ya que no estamos ordenando la tabla por un solo criterio, sino que hay un desempate de 3 condiciones. Por lo que es necesario para nostros que se nos retorne la tupla de 3 valores.
 
+## Semana 2 — Dónde mi instinto pidió un bucle
+
+1. **Al sumar los goles de un equipo seleccionado.** Pregunté literalmente:
+   "¿puedo usar un for para sumar los goles una vez ya tengo el índice?"
+   → Respuesta: no. Si el bucle recorre *datos*, está mal; si recorre
+   *entidades* (los 20 equipos), está bien. Lo resolví con .sum() sobre
+   las filas seleccionadas.
+
+2. **Al buscar el partido con más goles.** Mi primer reflejo fue quedarme
+   con un solo máximo (argmax); pensar en "todos los que empatan en el
+   máximo" exigía comparar el array entero contra un valor y usar
+   np.flatnonzero, no recorrerlo.
+
+3. **Al agrupar por equipo.** No supe cómo seleccionar los partidos de un
+   equipo sin recorrer los 380 partidos comprobando el nombre uno a uno.
+   La herramienta que sustituye a ese if dentro del bucle es la máscara
+   booleana.
+
+### Lo que me costó más
+- El parámetro `axis` (qué significa 0 y 1).
+- Que un array tiene un único `dtype` y que si lees texto del CSV sin
+  convertirlo, NumPy se niega a sumar.
+- La diferencia entre m[0,0] (un número) y m[:,0] (una columna entera).
+
+### Regla que me llevo
+Si el bucle recorre datos → vectorizar. Si recorre entidades → está bien.
+
