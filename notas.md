@@ -83,3 +83,22 @@ Esto lo hace porque fue lo que pedimos, ya que no estamos ordenando la tabla por
 ### Regla que me llevo
 Si el bucle recorre datos → vectorizar. Si recorre entidades → está bien.
 
+## Semana 2 Dia jueves
+
+### Ejercicio 1: multiplicacion de matriz
+Para el ejercicio 1, inicie haciendolo a mano, lo primero que hice fue desglosar las reglas para hacer una multiplicacion de matrices:
+
+1. El numero de columnas de la matriz A tiene que ser igual al numero de filas de la matriz B
+2. El resultado C sera una matriz de forma (n filas A, n columnas B)
+
+Despues al hacer la multiplicacion a mano, e iba poniendo las variables en el papel en forma de indices, por ejemplo A[0][0] * B[0][0] + A[0][1] * [1][0]
+
+Despues estuve un buen rato pensando como usar los for para que se lograra respetar la forma de multiplicar cada fila por cada columna y que obtuviera el orden de indices para lograrlo. Y despues de un rato, lo que me ayudo mucho fue definir los nombres de las variables de python, poner el numero de columnas y filas de A y B. ya que asi tenia una mejor imagen mental de que es lo que tiene que iterarse.
+
+Estuve un buen tiempo haciendolo, pero logre que la correcion np.allclose(mi_resultado, A @ B) diera True
+
+Mi hipotesis del uso de np.allclose y no == es que ese margen de error que sea lo mas cercano posible, para evitar las pequeños numeros de diferencia entra una operacion de python y numpy
+
+### Ejercicio 2: normalizacion
+
+Mi hipotesis del uso de np.allclose tenia la direccion correcta, pero la explicacion es que muchas veces no hay una representacion exacta en binario para los decimales, por lo que el valor que queda es lo mas parecido posible a 0, por ejemplo 1e-16. Entonces si usaramos == para comparar, siempre dara False porque no es exactamente igual, lo mejor es np.allclose ya que verifica que se acerque lo mas posible al 0
