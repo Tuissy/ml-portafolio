@@ -56,13 +56,15 @@ def normalizar_columnas(arr):
     arr_mean = arr.mean(0)
     arr_std = arr.std(0)
 
+    print(arr_mean.shape)
+
     arr_std[arr_std == 0] = 1.0
 
     resultado = (arr - arr_mean) / arr_std
     return resultado
 
-arr1 = np.random.random((3,3))
-arr2 = np.ones((3,3))
+arr1 = np.random.random((3,5))
+arr2 = np.ones((3,4))
 
 resultado1 = normalizar_columnas(arr1)
 resultado2 = normalizar_columnas(arr2)
