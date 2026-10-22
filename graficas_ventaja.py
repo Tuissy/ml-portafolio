@@ -146,7 +146,7 @@ hallazgo = ( df_final.groupby('Condicion_Publico')['Diferencia']
             .agg(
                 Goleadas_Locales=lambda x: (x >= 3).mean() * 100,
                 Victorias_Ajustadas=lambda x: x.isin([1, 2]).mean() * 100, ) .round(2) )
-print(hallazgo)
+
 
 fig.savefig('figuras/ventaja_por_temporada.png')
 fig2.savefig('figuras/resultados_con_sin_publico.png')

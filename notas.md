@@ -102,3 +102,9 @@ Mi hipotesis del uso de np.allclose y no == es que ese margen de error que sea l
 ### Ejercicio 2: normalizacion
 
 Mi hipotesis del uso de np.allclose tenia la direccion correcta, pero la explicacion es que muchas veces no hay una representacion exacta en binario para los decimales, por lo que el valor que queda es lo mas parecido posible a 0, por ejemplo 1e-16. Entonces si usaramos == para comparar, siempre dara False porque no es exactamente igual, lo mejor es np.allclose ya que verifica que se acerque lo mas posible al 0
+
+
+
+### Semana 4: descenso gradiente
+
+Para la pagina en blanco del dia jueves, no tuve dificultades para hacer la lectura de los csv, implementar el feature y sacar los datos de prueba. Lo que tuve que revisar fueron las formulas de todos los algoritmos implementados, ya que no me las puede aprender de memoria, sin embargo los pude pasar a codigo sin mucho problema y sin ver apuntes, ya que no era nada que no hubiese practicado antes en el curso con numpy. Y lo que si tuve que investigar mas a fondo en la documentacion de numpy fue el polyfit, pero no fue nada complicado.
